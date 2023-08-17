@@ -36,3 +36,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+// Select all Add to Cart buttons
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+  // Shopping cart array to store added items
+  const shoppingCart = [];
+
+  // Event listener for Add to Cart buttons
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const itemName = button.getAttribute('data-item');
+      
+      // Add item to shopping cart array
+      shoppingCart.push(itemName);
+      
+      // Update the UI (you can customize this part)
+      alert(`${itemName} added to cart!`);
+    });
+  });
